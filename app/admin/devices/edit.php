@@ -112,9 +112,18 @@ $('#switchManagementEdit select[name=rack]').change(function() {
 	<tr>
 		<td><?php print _('Device type'); ?></td>
 		<td>
+			<?php 
+				// Determines the list of device types.
+				$types = $Admin->fetch_all_objects("deviceTypes", "tid");
+
+				// Sort device types by name.
+				usort( $types, function( $a, $b ){
+					return strcmp($a->tname, $b->tname);
+				});
+			?>
+
 			<select name="type" class="form-control input-sm input-w-auto">
 			<?php
-			$types = $Admin->fetch_all_objects("deviceTypes", "tid");
 			foreach($types as $name) {
 				if($device['type'] == $name->tid)	{ print "<option value='$name->tid' selected='selected'>$name->tname</option>"; }
 				else								{ print "<option value='$name->tid' >$name->tname</option>"; }
