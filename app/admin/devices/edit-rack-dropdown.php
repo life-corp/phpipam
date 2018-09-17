@@ -133,7 +133,7 @@ if($_POST['rackid']>0 || @$device['rack']>0) {
 	<tr>
 	    <td><?php print _('Size'); ?> (U)</td>
 	    <td>
-	        <input type="text" name="rack_size" size="2" class="form-control input-w-auto input-sm" style="width:100px;" placeholder="1" value="<?php print @$device['rack_size']; ?>">
+	        <input type="text" name="rack_size" size="2" class="form-control input-w-auto input-sm" style="width:156px;" placeholder="Enter U count (rack unit)" value="<?php print @$device['rack_size']; ?>">
 	    </td>
 	</tr>
 <?php
