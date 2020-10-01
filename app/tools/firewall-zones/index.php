@@ -18,7 +18,7 @@ $User->check_user_session();
 $firewallZoneMapping = $Zones->get_zone_mappings();
 
 # reorder by device
-if ($firewallZoneMapping!==false) {
+if (is_array($firewallZoneMapping)) {
 	# devices
 	$devices = array();
 	# add
@@ -63,7 +63,7 @@ if($firewallZoneMapping) {
 		# mappings
 		foreach ($firewallZoneMapping as $mapping ) {
 			# set rowspan in case if there are more than one networks bound to the zone
-			$counter = count($mapping->network);
+			$counter = is_array($mapping->network) ? count($mapping->network) : 0;
 			if ($counter === 0) {
 				$counter = 1;
 			}

@@ -40,7 +40,11 @@ else{
                 'url' => $params->idplogout,
             ),
             'certFingerprint' => $params->idpcertfingerprint,
-	        'certFingerprintAlgorithm' => $params->idpcertalgorithm,
+            'certFingerprintAlgorithm' => $params->idpcertalgorithm,
+            'x509cert' => $params->idpx509cert,
+        ),
+       'security' => array (
+            'requestedAuthnContext' => false,
         ),
     );
 }

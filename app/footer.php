@@ -1,7 +1,8 @@
 <table class="donate">
 <tr>
 	<td>
-		<a href="http://phpipam.net">phpIPAM IP address management <?php print '[v'. VERSION_VISIBLE. ']'; ?><?php if(REVISION > 0) { print " rev".REVISION; } ?></a>
+		<?php var_dump(PUBLISHED); ?>
+		<a href="http://phpipam.net">phpIPAM IP address management <?php print '[v'. VERSION_VISIBLE. ']'; ?><?php if(PUBLISHED===false) { print " dbversion".DBVERSION; } ?></a>
 	</td>
 
 	<?php
